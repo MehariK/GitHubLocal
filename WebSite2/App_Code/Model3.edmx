@@ -1,0 +1,854 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GuestHouseManagementSystemModel2.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="GuestHouseManagementSystemModel2StoreContainer">
+          <EntitySet Name="BookingApproval" EntityType="GuestHouseManagementSystemModel2.Store.BookingApproval" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BookingRequest" EntityType="GuestHouseManagementSystemModel2.Store.BookingRequest" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Guest" EntityType="GuestHouseManagementSystemModel2.Store.Guest" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GuestHouseAdministrator" EntityType="GuestHouseManagementSystemModel2.Store.GuestHouseAdministrator" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Rent" EntityType="GuestHouseManagementSystemModel2.Store.Rent" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReservationApproval" EntityType="GuestHouseManagementSystemModel2.Store.ReservationApproval" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReservationRequest" EntityType="GuestHouseManagementSystemModel2.Store.ReservationRequest" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RoomForRent" EntityType="GuestHouseManagementSystemModel2.Store.RoomForRent" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RoomMaintenaceAndServiceInfo" EntityType="GuestHouseManagementSystemModel2.Store.RoomMaintenaceAndServiceInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ThirdPartyRequester" EntityType="GuestHouseManagementSystemModel2.Store.ThirdPartyRequester" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_BookingApproval_Guest1" Association="GuestHouseManagementSystemModel2.Store.FK_BookingApproval_Guest1">
+            <End Role="Guest" EntitySet="Guest" />
+            <End Role="BookingApproval" EntitySet="BookingApproval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookingApproval_GuestHouseAdministrator" Association="GuestHouseManagementSystemModel2.Store.FK_BookingApproval_GuestHouseAdministrator">
+            <End Role="GuestHouseAdministrator" EntitySet="GuestHouseAdministrator" />
+            <End Role="BookingApproval" EntitySet="BookingApproval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookingApproval_RoomForRent" Association="GuestHouseManagementSystemModel2.Store.FK_BookingApproval_RoomForRent">
+            <End Role="RoomForRent" EntitySet="RoomForRent" />
+            <End Role="BookingApproval" EntitySet="BookingApproval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookingRequest_BookingApproval" Association="GuestHouseManagementSystemModel2.Store.FK_BookingRequest_BookingApproval">
+            <End Role="BookingApproval" EntitySet="BookingApproval" />
+            <End Role="BookingRequest" EntitySet="BookingRequest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookingRequest_Guest" Association="GuestHouseManagementSystemModel2.Store.FK_BookingRequest_Guest">
+            <End Role="Guest" EntitySet="Guest" />
+            <End Role="BookingRequest" EntitySet="BookingRequest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookingRequest_ThirdPartyRequester" Association="GuestHouseManagementSystemModel2.Store.FK_BookingRequest_ThirdPartyRequester">
+            <End Role="ThirdPartyRequester" EntitySet="ThirdPartyRequester" />
+            <End Role="BookingRequest" EntitySet="BookingRequest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rent_BookingApproval" Association="GuestHouseManagementSystemModel2.Store.FK_Rent_BookingApproval">
+            <End Role="BookingApproval" EntitySet="BookingApproval" />
+            <End Role="Rent" EntitySet="Rent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationApproval_BookingApproval" Association="GuestHouseManagementSystemModel2.Store.FK_ReservationApproval_BookingApproval">
+            <End Role="BookingApproval" EntitySet="BookingApproval" />
+            <End Role="ReservationApproval" EntitySet="ReservationApproval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationApproval_Guest" Association="GuestHouseManagementSystemModel2.Store.FK_ReservationApproval_Guest">
+            <End Role="RoomForRent" EntitySet="RoomForRent" />
+            <End Role="ReservationApproval" EntitySet="ReservationApproval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationApproval_GuestHouseAdministrator" Association="GuestHouseManagementSystemModel2.Store.FK_ReservationApproval_GuestHouseAdministrator">
+            <End Role="GuestHouseAdministrator" EntitySet="GuestHouseAdministrator" />
+            <End Role="ReservationApproval" EntitySet="ReservationApproval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationRequest_Guest" Association="GuestHouseManagementSystemModel2.Store.FK_ReservationRequest_Guest">
+            <End Role="Guest" EntitySet="Guest" />
+            <End Role="ReservationRequest" EntitySet="ReservationRequest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationRequest_ReservationApproval" Association="GuestHouseManagementSystemModel2.Store.FK_ReservationRequest_ReservationApproval">
+            <End Role="ReservationApproval" EntitySet="ReservationApproval" />
+            <End Role="ReservationRequest" EntitySet="ReservationRequest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationRequest_ThirdPartyRequester" Association="GuestHouseManagementSystemModel2.Store.FK_ReservationRequest_ThirdPartyRequester">
+            <End Role="ThirdPartyRequester" EntitySet="ThirdPartyRequester" />
+            <End Role="ReservationRequest" EntitySet="ReservationRequest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoomMaintenaceAndServiceInfo_RoomForRent" Association="GuestHouseManagementSystemModel2.Store.FK_RoomMaintenaceAndServiceInfo_RoomForRent">
+            <End Role="RoomForRent" EntitySet="RoomForRent" />
+            <End Role="RoomMaintenaceAndServiceInfo" EntitySet="RoomMaintenaceAndServiceInfo" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BookingApproval">
+          <Key>
+            <PropertyRef Name="BookingOrderNumber" />
+          </Key>
+          <Property Name="BookingOrderNumber" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DateBookingProcessed" Type="smalldatetime" />
+          <Property Name="RoomNumber" Type="int" />
+          <Property Name="StaffAdminEmail" Type="varchar" MaxLength="50" />
+          <Property Name="GuestIDNumber" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="BookingRequest">
+          <Key>
+            <PropertyRef Name="BookingOrderNumber" />
+          </Key>
+          <Property Name="BookingRequestNumber" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BookingRequestedDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="BookingOrderNumber" Type="int" Nullable="false" />
+          <Property Name="GuestIDNumber" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ThirdPartyRequesterID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Guest">
+          <Key>
+            <PropertyRef Name="GuestIDNumber" />
+          </Key>
+          <Property Name="GuestLastName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="GuestFirstName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="GuestIDNumber" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DateGuestRegistered" Type="smalldatetime" />
+          <Property Name="DipartureDateOrCheckOut" Type="smalldatetime" />
+          <Property Name="GuestEmailAddress" Type="varchar" MaxLength="50" />
+          <Property Name="GuestNationality" Type="varchar" MaxLength="50" />
+          <Property Name="GuestNationalPassportUNLP" Type="varchar" MaxLength="50" />
+          <Property Name="ArrivalDateOrCheckInDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="GuestOfficialTitlte" Type="varchar" MaxLength="50" />
+          <Property Name="GuestResidenceStatus" Type="varchar" MaxLength="50" />
+          <Property Name="GuestTelephoneContact" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GuestHouseAdministrator">
+          <Key>
+            <PropertyRef Name="StaffAdminEmail" />
+          </Key>
+          <Property Name="StaffAdminEmail" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="StaffAdminPassword" Type="varchar" MaxLength="50" />
+          <Property Name="StaffAdminFirstName" Type="varchar" MaxLength="50" />
+          <Property Name="StaffAdminLastName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Rent">
+          <Key>
+            <PropertyRef Name="BookingOrderNumber" />
+          </Key>
+          <Property Name="RentProcessNumber" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BookingOrderNumber" Type="int" Nullable="false" />
+          <Property Name="RentDueForBooking" Type="smallmoney" />
+        </EntityType>
+        <EntityType Name="ReservationApproval">
+          <Key>
+            <PropertyRef Name="BookingOrderNumber" />
+          </Key>
+          <Property Name="DateReservationMade" Type="smalldatetime" />
+          <Property Name="RoomNumber" Type="int" />
+          <Property Name="StaffAdminEmail" Type="varchar" MaxLength="50" />
+          <Property Name="BookingOrderNumber" Type="int" Nullable="false" />
+          <Property Name="GuestIDNumber" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ReservationRequest">
+          <Key>
+            <PropertyRef Name="BookingOrderNumber" />
+          </Key>
+          <Property Name="ReservationRequestedDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="ThirdPartyRequesterID" Type="int" Nullable="false" />
+          <Property Name="GuestIDNumber" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="BookingOrderNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RoomForRent">
+          <Key>
+            <PropertyRef Name="RoomNumber" />
+          </Key>
+          <Property Name="RoomNumber" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoomInformation" Type="varchar" MaxLength="50" />
+          <Property Name="RoomOccupancyStatus" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RoomMaintenaceAndServiceInfo">
+          <Key>
+            <PropertyRef Name="RoomMaintenaceInfoLogNumber" />
+          </Key>
+          <Property Name="RoomMaintenaceInfoLogNumber" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoomNumber" Type="int" />
+          <Property Name="RoomMaintenanceRemark" Type="varchar" MaxLength="300" />
+          <Property Name="RoomMaintenanceDate" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="ThirdPartyRequester">
+          <Key>
+            <PropertyRef Name="ThirdPartyRequesterID" />
+          </Key>
+          <Property Name="ThirdPartyRequestByFName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ThirdPartyRequestByLName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ThirdPartyRequestByEmail" Type="varchar" MaxLength="50" />
+          <Property Name="ThirdPartyRequestByMobile" Type="varchar" MaxLength="50" />
+          <Property Name="BookingRequestNumber" Type="int" />
+          <Property Name="ThirdPartyRequesterID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <Association Name="FK_BookingApproval_Guest1">
+          <End Role="Guest" Type="GuestHouseManagementSystemModel2.Store.Guest" Multiplicity="1" />
+          <End Role="BookingApproval" Type="GuestHouseManagementSystemModel2.Store.BookingApproval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guest">
+              <PropertyRef Name="GuestIDNumber" />
+            </Principal>
+            <Dependent Role="BookingApproval">
+              <PropertyRef Name="GuestIDNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BookingApproval_GuestHouseAdministrator">
+          <End Role="GuestHouseAdministrator" Type="GuestHouseManagementSystemModel2.Store.GuestHouseAdministrator" Multiplicity="0..1" />
+          <End Role="BookingApproval" Type="GuestHouseManagementSystemModel2.Store.BookingApproval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GuestHouseAdministrator">
+              <PropertyRef Name="StaffAdminEmail" />
+            </Principal>
+            <Dependent Role="BookingApproval">
+              <PropertyRef Name="StaffAdminEmail" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BookingApproval_RoomForRent">
+          <End Role="RoomForRent" Type="GuestHouseManagementSystemModel2.Store.RoomForRent" Multiplicity="0..1" />
+          <End Role="BookingApproval" Type="GuestHouseManagementSystemModel2.Store.BookingApproval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoomForRent">
+              <PropertyRef Name="RoomNumber" />
+            </Principal>
+            <Dependent Role="BookingApproval">
+              <PropertyRef Name="RoomNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BookingRequest_BookingApproval">
+          <End Role="BookingApproval" Type="GuestHouseManagementSystemModel2.Store.BookingApproval" Multiplicity="1" />
+          <End Role="BookingRequest" Type="GuestHouseManagementSystemModel2.Store.BookingRequest" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="BookingApproval">
+              <PropertyRef Name="BookingOrderNumber" />
+            </Principal>
+            <Dependent Role="BookingRequest">
+              <PropertyRef Name="BookingOrderNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BookingRequest_Guest">
+          <End Role="Guest" Type="GuestHouseManagementSystemModel2.Store.Guest" Multiplicity="1" />
+          <End Role="BookingRequest" Type="GuestHouseManagementSystemModel2.Store.BookingRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guest">
+              <PropertyRef Name="GuestIDNumber" />
+            </Principal>
+            <Dependent Role="BookingRequest">
+              <PropertyRef Name="GuestIDNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BookingRequest_ThirdPartyRequester">
+          <End Role="ThirdPartyRequester" Type="GuestHouseManagementSystemModel2.Store.ThirdPartyRequester" Multiplicity="1" />
+          <End Role="BookingRequest" Type="GuestHouseManagementSystemModel2.Store.BookingRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ThirdPartyRequester">
+              <PropertyRef Name="ThirdPartyRequesterID" />
+            </Principal>
+            <Dependent Role="BookingRequest">
+              <PropertyRef Name="ThirdPartyRequesterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rent_BookingApproval">
+          <End Role="BookingApproval" Type="GuestHouseManagementSystemModel2.Store.BookingApproval" Multiplicity="1" />
+          <End Role="Rent" Type="GuestHouseManagementSystemModel2.Store.Rent" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="BookingApproval">
+              <PropertyRef Name="BookingOrderNumber" />
+            </Principal>
+            <Dependent Role="Rent">
+              <PropertyRef Name="BookingOrderNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationApproval_BookingApproval">
+          <End Role="BookingApproval" Type="GuestHouseManagementSystemModel2.Store.BookingApproval" Multiplicity="1" />
+          <End Role="ReservationApproval" Type="GuestHouseManagementSystemModel2.Store.ReservationApproval" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="BookingApproval">
+              <PropertyRef Name="BookingOrderNumber" />
+            </Principal>
+            <Dependent Role="ReservationApproval">
+              <PropertyRef Name="BookingOrderNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationApproval_Guest">
+          <End Role="RoomForRent" Type="GuestHouseManagementSystemModel2.Store.RoomForRent" Multiplicity="0..1" />
+          <End Role="ReservationApproval" Type="GuestHouseManagementSystemModel2.Store.ReservationApproval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoomForRent">
+              <PropertyRef Name="RoomNumber" />
+            </Principal>
+            <Dependent Role="ReservationApproval">
+              <PropertyRef Name="RoomNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationApproval_GuestHouseAdministrator">
+          <End Role="GuestHouseAdministrator" Type="GuestHouseManagementSystemModel2.Store.GuestHouseAdministrator" Multiplicity="0..1" />
+          <End Role="ReservationApproval" Type="GuestHouseManagementSystemModel2.Store.ReservationApproval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GuestHouseAdministrator">
+              <PropertyRef Name="StaffAdminEmail" />
+            </Principal>
+            <Dependent Role="ReservationApproval">
+              <PropertyRef Name="StaffAdminEmail" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationRequest_Guest">
+          <End Role="Guest" Type="GuestHouseManagementSystemModel2.Store.Guest" Multiplicity="1" />
+          <End Role="ReservationRequest" Type="GuestHouseManagementSystemModel2.Store.ReservationRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guest">
+              <PropertyRef Name="GuestIDNumber" />
+            </Principal>
+            <Dependent Role="ReservationRequest">
+              <PropertyRef Name="GuestIDNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationRequest_ReservationApproval">
+          <End Role="ReservationApproval" Type="GuestHouseManagementSystemModel2.Store.ReservationApproval" Multiplicity="1" />
+          <End Role="ReservationRequest" Type="GuestHouseManagementSystemModel2.Store.ReservationRequest" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ReservationApproval">
+              <PropertyRef Name="BookingOrderNumber" />
+            </Principal>
+            <Dependent Role="ReservationRequest">
+              <PropertyRef Name="BookingOrderNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationRequest_ThirdPartyRequester">
+          <End Role="ThirdPartyRequester" Type="GuestHouseManagementSystemModel2.Store.ThirdPartyRequester" Multiplicity="1" />
+          <End Role="ReservationRequest" Type="GuestHouseManagementSystemModel2.Store.ReservationRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ThirdPartyRequester">
+              <PropertyRef Name="ThirdPartyRequesterID" />
+            </Principal>
+            <Dependent Role="ReservationRequest">
+              <PropertyRef Name="ThirdPartyRequesterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoomMaintenaceAndServiceInfo_RoomForRent">
+          <End Role="RoomForRent" Type="GuestHouseManagementSystemModel2.Store.RoomForRent" Multiplicity="0..1" />
+          <End Role="RoomMaintenaceAndServiceInfo" Type="GuestHouseManagementSystemModel2.Store.RoomMaintenaceAndServiceInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoomForRent">
+              <PropertyRef Name="RoomNumber" />
+            </Principal>
+            <Dependent Role="RoomMaintenaceAndServiceInfo">
+              <PropertyRef Name="RoomNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GuestHouseManagementSystemModel2" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="GuestHouseManagementSystemEntities2" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="BookingApprovals" EntityType="GuestHouseManagementSystemModel2.BookingApproval" />
+          <EntitySet Name="BookingRequests" EntityType="GuestHouseManagementSystemModel2.BookingRequest" />
+          <EntitySet Name="Guests" EntityType="GuestHouseManagementSystemModel2.Guest" />
+          <EntitySet Name="GuestHouseAdministrators" EntityType="GuestHouseManagementSystemModel2.GuestHouseAdministrator" />
+          <EntitySet Name="Rents" EntityType="GuestHouseManagementSystemModel2.Rent" />
+          <EntitySet Name="ReservationApprovals" EntityType="GuestHouseManagementSystemModel2.ReservationApproval" />
+          <EntitySet Name="ReservationRequests" EntityType="GuestHouseManagementSystemModel2.ReservationRequest" />
+          <EntitySet Name="RoomForRents" EntityType="GuestHouseManagementSystemModel2.RoomForRent" />
+          <EntitySet Name="RoomMaintenaceAndServiceInfoes" EntityType="GuestHouseManagementSystemModel2.RoomMaintenaceAndServiceInfo" />
+          <EntitySet Name="ThirdPartyRequesters" EntityType="GuestHouseManagementSystemModel2.ThirdPartyRequester" />
+          <AssociationSet Name="FK_BookingApproval_Guest1" Association="GuestHouseManagementSystemModel2.FK_BookingApproval_Guest1">
+            <End Role="Guest" EntitySet="Guests" />
+            <End Role="BookingApproval" EntitySet="BookingApprovals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookingApproval_GuestHouseAdministrator" Association="GuestHouseManagementSystemModel2.FK_BookingApproval_GuestHouseAdministrator">
+            <End Role="GuestHouseAdministrator" EntitySet="GuestHouseAdministrators" />
+            <End Role="BookingApproval" EntitySet="BookingApprovals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookingApproval_RoomForRent" Association="GuestHouseManagementSystemModel2.FK_BookingApproval_RoomForRent">
+            <End Role="RoomForRent" EntitySet="RoomForRents" />
+            <End Role="BookingApproval" EntitySet="BookingApprovals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookingRequest_BookingApproval" Association="GuestHouseManagementSystemModel2.FK_BookingRequest_BookingApproval">
+            <End Role="BookingApproval" EntitySet="BookingApprovals" />
+            <End Role="BookingRequest" EntitySet="BookingRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rent_BookingApproval" Association="GuestHouseManagementSystemModel2.FK_Rent_BookingApproval">
+            <End Role="BookingApproval" EntitySet="BookingApprovals" />
+            <End Role="Rent" EntitySet="Rents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationApproval_BookingApproval" Association="GuestHouseManagementSystemModel2.FK_ReservationApproval_BookingApproval">
+            <End Role="BookingApproval" EntitySet="BookingApprovals" />
+            <End Role="ReservationApproval" EntitySet="ReservationApprovals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookingRequest_Guest" Association="GuestHouseManagementSystemModel2.FK_BookingRequest_Guest">
+            <End Role="Guest" EntitySet="Guests" />
+            <End Role="BookingRequest" EntitySet="BookingRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookingRequest_ThirdPartyRequester" Association="GuestHouseManagementSystemModel2.FK_BookingRequest_ThirdPartyRequester">
+            <End Role="ThirdPartyRequester" EntitySet="ThirdPartyRequesters" />
+            <End Role="BookingRequest" EntitySet="BookingRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationRequest_Guest" Association="GuestHouseManagementSystemModel2.FK_ReservationRequest_Guest">
+            <End Role="Guest" EntitySet="Guests" />
+            <End Role="ReservationRequest" EntitySet="ReservationRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationApproval_GuestHouseAdministrator" Association="GuestHouseManagementSystemModel2.FK_ReservationApproval_GuestHouseAdministrator">
+            <End Role="GuestHouseAdministrator" EntitySet="GuestHouseAdministrators" />
+            <End Role="ReservationApproval" EntitySet="ReservationApprovals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationApproval_Guest" Association="GuestHouseManagementSystemModel2.FK_ReservationApproval_Guest">
+            <End Role="RoomForRent" EntitySet="RoomForRents" />
+            <End Role="ReservationApproval" EntitySet="ReservationApprovals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationRequest_ReservationApproval" Association="GuestHouseManagementSystemModel2.FK_ReservationRequest_ReservationApproval">
+            <End Role="ReservationApproval" EntitySet="ReservationApprovals" />
+            <End Role="ReservationRequest" EntitySet="ReservationRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationRequest_ThirdPartyRequester" Association="GuestHouseManagementSystemModel2.FK_ReservationRequest_ThirdPartyRequester">
+            <End Role="ThirdPartyRequester" EntitySet="ThirdPartyRequesters" />
+            <End Role="ReservationRequest" EntitySet="ReservationRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoomMaintenaceAndServiceInfo_RoomForRent" Association="GuestHouseManagementSystemModel2.FK_RoomMaintenaceAndServiceInfo_RoomForRent">
+            <End Role="RoomForRent" EntitySet="RoomForRents" />
+            <End Role="RoomMaintenaceAndServiceInfo" EntitySet="RoomMaintenaceAndServiceInfoes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BookingApproval">
+          <Key>
+            <PropertyRef Name="BookingOrderNumber" />
+          </Key>
+          <Property Name="BookingOrderNumber" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DateBookingProcessed" Type="DateTime" Precision="0" />
+          <Property Name="RoomNumber" Type="Int32" />
+          <Property Name="StaffAdminEmail" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="GuestIDNumber" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Guest" Relationship="GuestHouseManagementSystemModel2.FK_BookingApproval_Guest1" FromRole="BookingApproval" ToRole="Guest" />
+          <NavigationProperty Name="GuestHouseAdministrator" Relationship="GuestHouseManagementSystemModel2.FK_BookingApproval_GuestHouseAdministrator" FromRole="BookingApproval" ToRole="GuestHouseAdministrator" />
+          <NavigationProperty Name="RoomForRent" Relationship="GuestHouseManagementSystemModel2.FK_BookingApproval_RoomForRent" FromRole="BookingApproval" ToRole="RoomForRent" />
+          <NavigationProperty Name="BookingRequest" Relationship="GuestHouseManagementSystemModel2.FK_BookingRequest_BookingApproval" FromRole="BookingApproval" ToRole="BookingRequest" />
+          <NavigationProperty Name="Rent" Relationship="GuestHouseManagementSystemModel2.FK_Rent_BookingApproval" FromRole="BookingApproval" ToRole="Rent" />
+          <NavigationProperty Name="ReservationApproval" Relationship="GuestHouseManagementSystemModel2.FK_ReservationApproval_BookingApproval" FromRole="BookingApproval" ToRole="ReservationApproval" />
+        </EntityType>
+        <EntityType Name="BookingRequest">
+          <Key>
+            <PropertyRef Name="BookingOrderNumber" />
+          </Key>
+          <Property Name="BookingRequestNumber" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BookingRequestedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="BookingOrderNumber" Type="Int32" Nullable="false" />
+          <Property Name="GuestIDNumber" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ThirdPartyRequesterID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BookingApproval" Relationship="GuestHouseManagementSystemModel2.FK_BookingRequest_BookingApproval" FromRole="BookingRequest" ToRole="BookingApproval" />
+          <NavigationProperty Name="Guest" Relationship="GuestHouseManagementSystemModel2.FK_BookingRequest_Guest" FromRole="BookingRequest" ToRole="Guest" />
+          <NavigationProperty Name="ThirdPartyRequester" Relationship="GuestHouseManagementSystemModel2.FK_BookingRequest_ThirdPartyRequester" FromRole="BookingRequest" ToRole="ThirdPartyRequester" />
+        </EntityType>
+        <EntityType Name="Guest">
+          <Key>
+            <PropertyRef Name="GuestIDNumber" />
+          </Key>
+          <Property Name="GuestLastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="GuestFirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="GuestIDNumber" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DateGuestRegistered" Type="DateTime" Precision="0" />
+          <Property Name="DipartureDateOrCheckOut" Type="DateTime" Precision="0" />
+          <Property Name="GuestEmailAddress" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="GuestNationality" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="GuestNationalPassportUNLP" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ArrivalDateOrCheckInDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="GuestOfficialTitlte" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="GuestResidenceStatus" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="GuestTelephoneContact" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="BookingApprovals" Relationship="GuestHouseManagementSystemModel2.FK_BookingApproval_Guest1" FromRole="Guest" ToRole="BookingApproval" />
+          <NavigationProperty Name="BookingRequests" Relationship="GuestHouseManagementSystemModel2.FK_BookingRequest_Guest" FromRole="Guest" ToRole="BookingRequest" />
+          <NavigationProperty Name="ReservationRequests" Relationship="GuestHouseManagementSystemModel2.FK_ReservationRequest_Guest" FromRole="Guest" ToRole="ReservationRequest" />
+        </EntityType>
+        <EntityType Name="GuestHouseAdministrator">
+          <Key>
+            <PropertyRef Name="StaffAdminEmail" />
+          </Key>
+          <Property Name="StaffAdminEmail" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="StaffAdminPassword" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="StaffAdminFirstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="StaffAdminLastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="BookingApprovals" Relationship="GuestHouseManagementSystemModel2.FK_BookingApproval_GuestHouseAdministrator" FromRole="GuestHouseAdministrator" ToRole="BookingApproval" />
+          <NavigationProperty Name="ReservationApprovals" Relationship="GuestHouseManagementSystemModel2.FK_ReservationApproval_GuestHouseAdministrator" FromRole="GuestHouseAdministrator" ToRole="ReservationApproval" />
+        </EntityType>
+        <EntityType Name="Rent">
+          <Key>
+            <PropertyRef Name="BookingOrderNumber" />
+          </Key>
+          <Property Name="RentProcessNumber" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BookingOrderNumber" Type="Int32" Nullable="false" />
+          <Property Name="RentDueForBooking" Type="Decimal" Precision="10" Scale="4" />
+          <NavigationProperty Name="BookingApproval" Relationship="GuestHouseManagementSystemModel2.FK_Rent_BookingApproval" FromRole="Rent" ToRole="BookingApproval" />
+        </EntityType>
+        <EntityType Name="ReservationApproval">
+          <Key>
+            <PropertyRef Name="BookingOrderNumber" />
+          </Key>
+          <Property Name="DateReservationMade" Type="DateTime" Precision="0" />
+          <Property Name="RoomNumber" Type="Int32" />
+          <Property Name="StaffAdminEmail" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BookingOrderNumber" Type="Int32" Nullable="false" />
+          <Property Name="GuestIDNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="BookingApproval" Relationship="GuestHouseManagementSystemModel2.FK_ReservationApproval_BookingApproval" FromRole="ReservationApproval" ToRole="BookingApproval" />
+          <NavigationProperty Name="GuestHouseAdministrator" Relationship="GuestHouseManagementSystemModel2.FK_ReservationApproval_GuestHouseAdministrator" FromRole="ReservationApproval" ToRole="GuestHouseAdministrator" />
+          <NavigationProperty Name="RoomForRent" Relationship="GuestHouseManagementSystemModel2.FK_ReservationApproval_Guest" FromRole="ReservationApproval" ToRole="RoomForRent" />
+          <NavigationProperty Name="ReservationRequest" Relationship="GuestHouseManagementSystemModel2.FK_ReservationRequest_ReservationApproval" FromRole="ReservationApproval" ToRole="ReservationRequest" />
+        </EntityType>
+        <EntityType Name="ReservationRequest">
+          <Key>
+            <PropertyRef Name="BookingOrderNumber" />
+          </Key>
+          <Property Name="ReservationRequestedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ThirdPartyRequesterID" Type="Int32" Nullable="false" />
+          <Property Name="GuestIDNumber" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BookingOrderNumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Guest" Relationship="GuestHouseManagementSystemModel2.FK_ReservationRequest_Guest" FromRole="ReservationRequest" ToRole="Guest" />
+          <NavigationProperty Name="ReservationApproval" Relationship="GuestHouseManagementSystemModel2.FK_ReservationRequest_ReservationApproval" FromRole="ReservationRequest" ToRole="ReservationApproval" />
+          <NavigationProperty Name="ThirdPartyRequester" Relationship="GuestHouseManagementSystemModel2.FK_ReservationRequest_ThirdPartyRequester" FromRole="ReservationRequest" ToRole="ThirdPartyRequester" />
+        </EntityType>
+        <EntityType Name="RoomForRent">
+          <Key>
+            <PropertyRef Name="RoomNumber" />
+          </Key>
+          <Property Name="RoomNumber" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RoomInformation" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="RoomOccupancyStatus" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="BookingApprovals" Relationship="GuestHouseManagementSystemModel2.FK_BookingApproval_RoomForRent" FromRole="RoomForRent" ToRole="BookingApproval" />
+          <NavigationProperty Name="ReservationApprovals" Relationship="GuestHouseManagementSystemModel2.FK_ReservationApproval_Guest" FromRole="RoomForRent" ToRole="ReservationApproval" />
+          <NavigationProperty Name="RoomMaintenaceAndServiceInfoes" Relationship="GuestHouseManagementSystemModel2.FK_RoomMaintenaceAndServiceInfo_RoomForRent" FromRole="RoomForRent" ToRole="RoomMaintenaceAndServiceInfo" />
+        </EntityType>
+        <EntityType Name="RoomMaintenaceAndServiceInfo">
+          <Key>
+            <PropertyRef Name="RoomMaintenaceInfoLogNumber" />
+          </Key>
+          <Property Name="RoomMaintenaceInfoLogNumber" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RoomNumber" Type="Int32" />
+          <Property Name="RoomMaintenanceRemark" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="RoomMaintenanceDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="RoomForRent" Relationship="GuestHouseManagementSystemModel2.FK_RoomMaintenaceAndServiceInfo_RoomForRent" FromRole="RoomMaintenaceAndServiceInfo" ToRole="RoomForRent" />
+        </EntityType>
+        <EntityType Name="ThirdPartyRequester">
+          <Key>
+            <PropertyRef Name="ThirdPartyRequesterID" />
+          </Key>
+          <Property Name="ThirdPartyRequestByFName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ThirdPartyRequestByLName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ThirdPartyRequestByEmail" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ThirdPartyRequestByMobile" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BookingRequestNumber" Type="Int32" />
+          <Property Name="ThirdPartyRequesterID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="BookingRequests" Relationship="GuestHouseManagementSystemModel2.FK_BookingRequest_ThirdPartyRequester" FromRole="ThirdPartyRequester" ToRole="BookingRequest" />
+          <NavigationProperty Name="ReservationRequests" Relationship="GuestHouseManagementSystemModel2.FK_ReservationRequest_ThirdPartyRequester" FromRole="ThirdPartyRequester" ToRole="ReservationRequest" />
+        </EntityType>
+        <Association Name="FK_BookingApproval_Guest1">
+          <End Role="Guest" Type="GuestHouseManagementSystemModel2.Guest" Multiplicity="1" />
+          <End Role="BookingApproval" Type="GuestHouseManagementSystemModel2.BookingApproval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guest">
+              <PropertyRef Name="GuestIDNumber" />
+            </Principal>
+            <Dependent Role="BookingApproval">
+              <PropertyRef Name="GuestIDNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BookingApproval_GuestHouseAdministrator">
+          <End Role="GuestHouseAdministrator" Type="GuestHouseManagementSystemModel2.GuestHouseAdministrator" Multiplicity="0..1" />
+          <End Role="BookingApproval" Type="GuestHouseManagementSystemModel2.BookingApproval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GuestHouseAdministrator">
+              <PropertyRef Name="StaffAdminEmail" />
+            </Principal>
+            <Dependent Role="BookingApproval">
+              <PropertyRef Name="StaffAdminEmail" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BookingApproval_RoomForRent">
+          <End Role="RoomForRent" Type="GuestHouseManagementSystemModel2.RoomForRent" Multiplicity="0..1" />
+          <End Role="BookingApproval" Type="GuestHouseManagementSystemModel2.BookingApproval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoomForRent">
+              <PropertyRef Name="RoomNumber" />
+            </Principal>
+            <Dependent Role="BookingApproval">
+              <PropertyRef Name="RoomNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BookingRequest_BookingApproval">
+          <End Role="BookingApproval" Type="GuestHouseManagementSystemModel2.BookingApproval" Multiplicity="1" />
+          <End Role="BookingRequest" Type="GuestHouseManagementSystemModel2.BookingRequest" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="BookingApproval">
+              <PropertyRef Name="BookingOrderNumber" />
+            </Principal>
+            <Dependent Role="BookingRequest">
+              <PropertyRef Name="BookingOrderNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rent_BookingApproval">
+          <End Role="BookingApproval" Type="GuestHouseManagementSystemModel2.BookingApproval" Multiplicity="1" />
+          <End Role="Rent" Type="GuestHouseManagementSystemModel2.Rent" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="BookingApproval">
+              <PropertyRef Name="BookingOrderNumber" />
+            </Principal>
+            <Dependent Role="Rent">
+              <PropertyRef Name="BookingOrderNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationApproval_BookingApproval">
+          <End Role="BookingApproval" Type="GuestHouseManagementSystemModel2.BookingApproval" Multiplicity="1" />
+          <End Role="ReservationApproval" Type="GuestHouseManagementSystemModel2.ReservationApproval" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="BookingApproval">
+              <PropertyRef Name="BookingOrderNumber" />
+            </Principal>
+            <Dependent Role="ReservationApproval">
+              <PropertyRef Name="BookingOrderNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BookingRequest_Guest">
+          <End Role="Guest" Type="GuestHouseManagementSystemModel2.Guest" Multiplicity="1" />
+          <End Role="BookingRequest" Type="GuestHouseManagementSystemModel2.BookingRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guest">
+              <PropertyRef Name="GuestIDNumber" />
+            </Principal>
+            <Dependent Role="BookingRequest">
+              <PropertyRef Name="GuestIDNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BookingRequest_ThirdPartyRequester">
+          <End Role="ThirdPartyRequester" Type="GuestHouseManagementSystemModel2.ThirdPartyRequester" Multiplicity="1" />
+          <End Role="BookingRequest" Type="GuestHouseManagementSystemModel2.BookingRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ThirdPartyRequester">
+              <PropertyRef Name="ThirdPartyRequesterID" />
+            </Principal>
+            <Dependent Role="BookingRequest">
+              <PropertyRef Name="ThirdPartyRequesterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationRequest_Guest">
+          <End Role="Guest" Type="GuestHouseManagementSystemModel2.Guest" Multiplicity="1" />
+          <End Role="ReservationRequest" Type="GuestHouseManagementSystemModel2.ReservationRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guest">
+              <PropertyRef Name="GuestIDNumber" />
+            </Principal>
+            <Dependent Role="ReservationRequest">
+              <PropertyRef Name="GuestIDNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationApproval_GuestHouseAdministrator">
+          <End Role="GuestHouseAdministrator" Type="GuestHouseManagementSystemModel2.GuestHouseAdministrator" Multiplicity="0..1" />
+          <End Role="ReservationApproval" Type="GuestHouseManagementSystemModel2.ReservationApproval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GuestHouseAdministrator">
+              <PropertyRef Name="StaffAdminEmail" />
+            </Principal>
+            <Dependent Role="ReservationApproval">
+              <PropertyRef Name="StaffAdminEmail" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationApproval_Guest">
+          <End Role="RoomForRent" Type="GuestHouseManagementSystemModel2.RoomForRent" Multiplicity="0..1" />
+          <End Role="ReservationApproval" Type="GuestHouseManagementSystemModel2.ReservationApproval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoomForRent">
+              <PropertyRef Name="RoomNumber" />
+            </Principal>
+            <Dependent Role="ReservationApproval">
+              <PropertyRef Name="RoomNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationRequest_ReservationApproval">
+          <End Role="ReservationApproval" Type="GuestHouseManagementSystemModel2.ReservationApproval" Multiplicity="1" />
+          <End Role="ReservationRequest" Type="GuestHouseManagementSystemModel2.ReservationRequest" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ReservationApproval">
+              <PropertyRef Name="BookingOrderNumber" />
+            </Principal>
+            <Dependent Role="ReservationRequest">
+              <PropertyRef Name="BookingOrderNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationRequest_ThirdPartyRequester">
+          <End Role="ThirdPartyRequester" Type="GuestHouseManagementSystemModel2.ThirdPartyRequester" Multiplicity="1" />
+          <End Role="ReservationRequest" Type="GuestHouseManagementSystemModel2.ReservationRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ThirdPartyRequester">
+              <PropertyRef Name="ThirdPartyRequesterID" />
+            </Principal>
+            <Dependent Role="ReservationRequest">
+              <PropertyRef Name="ThirdPartyRequesterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoomMaintenaceAndServiceInfo_RoomForRent">
+          <End Role="RoomForRent" Type="GuestHouseManagementSystemModel2.RoomForRent" Multiplicity="0..1" />
+          <End Role="RoomMaintenaceAndServiceInfo" Type="GuestHouseManagementSystemModel2.RoomMaintenaceAndServiceInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoomForRent">
+              <PropertyRef Name="RoomNumber" />
+            </Principal>
+            <Dependent Role="RoomMaintenaceAndServiceInfo">
+              <PropertyRef Name="RoomNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GuestHouseManagementSystemModel2StoreContainer" CdmEntityContainer="GuestHouseManagementSystemEntities2">
+          <EntitySetMapping Name="BookingApprovals">
+            <EntityTypeMapping TypeName="GuestHouseManagementSystemModel2.BookingApproval">
+              <MappingFragment StoreEntitySet="BookingApproval">
+                <ScalarProperty Name="BookingOrderNumber" ColumnName="BookingOrderNumber" />
+                <ScalarProperty Name="DateBookingProcessed" ColumnName="DateBookingProcessed" />
+                <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+                <ScalarProperty Name="StaffAdminEmail" ColumnName="StaffAdminEmail" />
+                <ScalarProperty Name="GuestIDNumber" ColumnName="GuestIDNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BookingRequests">
+            <EntityTypeMapping TypeName="GuestHouseManagementSystemModel2.BookingRequest">
+              <MappingFragment StoreEntitySet="BookingRequest">
+                <ScalarProperty Name="BookingRequestNumber" ColumnName="BookingRequestNumber" />
+                <ScalarProperty Name="BookingRequestedDate" ColumnName="BookingRequestedDate" />
+                <ScalarProperty Name="BookingOrderNumber" ColumnName="BookingOrderNumber" />
+                <ScalarProperty Name="GuestIDNumber" ColumnName="GuestIDNumber" />
+                <ScalarProperty Name="ThirdPartyRequesterID" ColumnName="ThirdPartyRequesterID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Guests">
+            <EntityTypeMapping TypeName="GuestHouseManagementSystemModel2.Guest">
+              <MappingFragment StoreEntitySet="Guest">
+                <ScalarProperty Name="GuestLastName" ColumnName="GuestLastName" />
+                <ScalarProperty Name="GuestFirstName" ColumnName="GuestFirstName" />
+                <ScalarProperty Name="GuestIDNumber" ColumnName="GuestIDNumber" />
+                <ScalarProperty Name="DateGuestRegistered" ColumnName="DateGuestRegistered" />
+                <ScalarProperty Name="DipartureDateOrCheckOut" ColumnName="DipartureDateOrCheckOut" />
+                <ScalarProperty Name="GuestEmailAddress" ColumnName="GuestEmailAddress" />
+                <ScalarProperty Name="GuestNationality" ColumnName="GuestNationality" />
+                <ScalarProperty Name="GuestNationalPassportUNLP" ColumnName="GuestNationalPassportUNLP" />
+                <ScalarProperty Name="ArrivalDateOrCheckInDate" ColumnName="ArrivalDateOrCheckInDate" />
+                <ScalarProperty Name="GuestOfficialTitlte" ColumnName="GuestOfficialTitlte" />
+                <ScalarProperty Name="GuestResidenceStatus" ColumnName="GuestResidenceStatus" />
+                <ScalarProperty Name="GuestTelephoneContact" ColumnName="GuestTelephoneContact" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GuestHouseAdministrators">
+            <EntityTypeMapping TypeName="GuestHouseManagementSystemModel2.GuestHouseAdministrator">
+              <MappingFragment StoreEntitySet="GuestHouseAdministrator">
+                <ScalarProperty Name="StaffAdminEmail" ColumnName="StaffAdminEmail" />
+                <ScalarProperty Name="StaffAdminPassword" ColumnName="StaffAdminPassword" />
+                <ScalarProperty Name="StaffAdminFirstName" ColumnName="StaffAdminFirstName" />
+                <ScalarProperty Name="StaffAdminLastName" ColumnName="StaffAdminLastName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rents">
+            <EntityTypeMapping TypeName="GuestHouseManagementSystemModel2.Rent">
+              <MappingFragment StoreEntitySet="Rent">
+                <ScalarProperty Name="RentProcessNumber" ColumnName="RentProcessNumber" />
+                <ScalarProperty Name="BookingOrderNumber" ColumnName="BookingOrderNumber" />
+                <ScalarProperty Name="RentDueForBooking" ColumnName="RentDueForBooking" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReservationApprovals">
+            <EntityTypeMapping TypeName="GuestHouseManagementSystemModel2.ReservationApproval">
+              <MappingFragment StoreEntitySet="ReservationApproval">
+                <ScalarProperty Name="DateReservationMade" ColumnName="DateReservationMade" />
+                <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+                <ScalarProperty Name="StaffAdminEmail" ColumnName="StaffAdminEmail" />
+                <ScalarProperty Name="BookingOrderNumber" ColumnName="BookingOrderNumber" />
+                <ScalarProperty Name="GuestIDNumber" ColumnName="GuestIDNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReservationRequests">
+            <EntityTypeMapping TypeName="GuestHouseManagementSystemModel2.ReservationRequest">
+              <MappingFragment StoreEntitySet="ReservationRequest">
+                <ScalarProperty Name="ReservationRequestedDate" ColumnName="ReservationRequestedDate" />
+                <ScalarProperty Name="ThirdPartyRequesterID" ColumnName="ThirdPartyRequesterID" />
+                <ScalarProperty Name="GuestIDNumber" ColumnName="GuestIDNumber" />
+                <ScalarProperty Name="BookingOrderNumber" ColumnName="BookingOrderNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoomForRents">
+            <EntityTypeMapping TypeName="GuestHouseManagementSystemModel2.RoomForRent">
+              <MappingFragment StoreEntitySet="RoomForRent">
+                <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+                <ScalarProperty Name="RoomInformation" ColumnName="RoomInformation" />
+                <ScalarProperty Name="RoomOccupancyStatus" ColumnName="RoomOccupancyStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoomMaintenaceAndServiceInfoes">
+            <EntityTypeMapping TypeName="GuestHouseManagementSystemModel2.RoomMaintenaceAndServiceInfo">
+              <MappingFragment StoreEntitySet="RoomMaintenaceAndServiceInfo">
+                <ScalarProperty Name="RoomMaintenaceInfoLogNumber" ColumnName="RoomMaintenaceInfoLogNumber" />
+                <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+                <ScalarProperty Name="RoomMaintenanceRemark" ColumnName="RoomMaintenanceRemark" />
+                <ScalarProperty Name="RoomMaintenanceDate" ColumnName="RoomMaintenanceDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThirdPartyRequesters">
+            <EntityTypeMapping TypeName="GuestHouseManagementSystemModel2.ThirdPartyRequester">
+              <MappingFragment StoreEntitySet="ThirdPartyRequester">
+                <ScalarProperty Name="ThirdPartyRequestByFName" ColumnName="ThirdPartyRequestByFName" />
+                <ScalarProperty Name="ThirdPartyRequestByLName" ColumnName="ThirdPartyRequestByLName" />
+                <ScalarProperty Name="ThirdPartyRequestByEmail" ColumnName="ThirdPartyRequestByEmail" />
+                <ScalarProperty Name="ThirdPartyRequestByMobile" ColumnName="ThirdPartyRequestByMobile" />
+                <ScalarProperty Name="BookingRequestNumber" ColumnName="BookingRequestNumber" />
+                <ScalarProperty Name="ThirdPartyRequesterID" ColumnName="ThirdPartyRequesterID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

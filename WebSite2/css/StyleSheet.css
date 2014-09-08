@@ -1,0 +1,203 @@
+﻿body {
+    background-color:beige;
+    border:double;
+    width:98%;
+}
+
+h2 {
+
+
+}
+
+
+#divalldivcontainer {
+    width:80%;
+    clear:both;
+    margin:20px auto;
+
+
+}
+ #divtopbar {
+    background-image: url("/images/top_banner.png"); 
+    background-repeat:no-repeat;
+    width:99%;
+    clear:both;
+    height:130px;
+    border:dotted;
+    border-width:thin;
+    text-align:center;
+    background-color:lightgreen;
+    text-align:center;
+}
+
+#divuserbar {
+    width:99%;
+    clear:both;
+    height:30px;
+    border:dotted;
+    border-width:thin;
+    text-align:center;
+}
+
+#divmenubar {
+    width:99%;
+    clear:both;
+    height:30px;
+    border:dotted;
+    border-width:thin;
+    text-align:left;
+}
+
+.verticalspacer {
+    width:99%;
+    clear:both;
+    height:25px;
+}
+
+
+#divtorsocontent{
+    width:99%;
+    clear:both;
+    height:auto;
+}
+
+
+#divwfpnewblock {
+    width:99%;
+    clear:both;
+    height:80px;
+    border:dotted;
+    border-width:thin;
+}
+
+
+#divjicablockparent {
+    width:99%;
+    clear:both;
+    height:350px;
+    border:dotted;
+    border-width:thin;
+}
+
+#divjicavertiblock {
+    width:40%;
+    float:left;
+    height:350px;
+    border:dotted;
+    border-width:thin;
+}
+
+#divjicahoriblock {
+    width:55%;
+    float:right;
+    height:350px;
+    border:dotted;
+    border-width:thin;
+}
+
+
+#divcafeandoldblockparent {
+    width:99%;
+    clear:both;
+    height:550px;
+    border:dotted;
+    border-width:thin;
+}
+
+#divwfpoldblock {
+    width:40%;
+    float:left;
+    height:550px;
+    border:dotted;
+    border-width:thin;
+
+}
+
+#divwfpcafeblock {
+    width:55%;
+    float:right;
+    height:550px;
+    border:dotted;
+    border-width:thin;
+
+}
+
+#divhosoblockparent {
+    width:99%;
+    clear:both;
+    height:85px;
+    border:dotted;
+    border-width:thin;
+}
+
+#divhosoblock {
+    width:40%;
+    float:left;
+    height:85px;
+    border:dotted;
+    border-width:thin;
+}
+
+#divprefabblock {
+    width:55%;
+    float:right;
+    height:85px;
+    border:dotted;
+    border-width:thin;
+
+}
+
+#divfooterblock {
+    width:99%;
+    clear:both;
+    height:50px;
+    border:dotted;
+    border-width:thin;
+    margin-bottom:2px;
+ 
+}
+
+table, th, td
+{
+border: 1px solid black;
+}
+
+    table div {
+        height:68px;
+        width:88px;
+    }
+
+tr {
+    
+}
+
+td {
+    
+     width:90px;
+     height:70px;
+}
+
+#tblwfpnewblock {
+     margin-left:20%;
+}
+
+#tbljicavertiblock {
+     margin-left:20px;
+}
+
+#tbljicahoriblock {
+   
+   
+}
+
+#tblwfpoldblock {
+    margin-left:20px;
+}
+
+#tblhosoblock {
+    margin-left:40%;
+}
+
+#tblprefabblock {
+    margin-left:30%;
+}

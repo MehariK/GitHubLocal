@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <asp:ContentPlaceHolder ID="Stylesheets" runat="server">
+        
+    </asp:ContentPlaceHolder>
+  <link rel="stylesheet" href="/css/StyleSheet.css" type="text/css"/>
+
+    
+</head>
+<body>
+    <form id="frmGuestHouseMangt" runat="server">
+    <div id="divalldivcontainer">
+       
+
+               
+                <div id="divtopbar"> <h2>Guesthouse Management System</h2>&nbsp;</div>
+               
+           
+                  <div id="divuserbar"> &nbsp; </div>
+                       
+                    
+                <div id="divmenubar"> &nbsp; </div>
+                            
+                       
+        <div id="divtorsocontent">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            
+         </asp:ContentPlaceHolder>
+
+        </div>                
+                              
+                <div id="divfooterblock"><p>
+                This Web Application is developed by Mehari Kassahun, ICT Assistant, Gode Sub Office, 0920243899</p>
+        </div>
+                            
+        
+    
+    </div>
+    </form>
+</body></html>
